@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "var.region" # or your region
+  region = "us-east-1" # or your region
 }
 
 # VPC
