@@ -17,3 +17,12 @@ variable "availability_zone_1" {
 variable "availability_zone_2" {
   default = "us-east-1b"
 }
+variable "image_uri" {
+  description = "Docker image URI for the ECS task definition"
+  type        = string
+}
+
+variable "region" {
+  description = "AWS region to deploy resources"
+  type        = string
+}
