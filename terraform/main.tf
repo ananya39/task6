@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1" # or your region
+  region = "var.region" # or your region
 }
 
 # VPC
@@ -63,7 +63,7 @@ resource "aws_ecs_task_definition" "strapi_task" {
   container_definitions = jsonencode([
     {
       name      = "strapi-container"
-      image     = "430118850209.dkr.ecr.us-east-1.amazonaws.com/myapp"
+      image     = "var.image_uri"
       essential = true
       portMappings = [
         {
