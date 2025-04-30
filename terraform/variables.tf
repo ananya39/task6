@@ -20,6 +20,7 @@ variable "availability_zone_2" {
 variable "image_uri" {
   description = "Docker image URI for the ECS task definition"
   type        = string
+  default     = "430118850209.dkr.ecr.us-east-1.amazonaws.com/myapp"
 }
 
 variable "region" {
