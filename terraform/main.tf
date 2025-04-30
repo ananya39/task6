@@ -137,14 +137,17 @@ resource "aws_lb_target_group" "strapi_target_group" {
   protocol    = "HTTP"
   target_type = "ip"
   vpc_id      = aws_vpc.main.id
-   health_check {
-    path                = "/"
-    interval            = 30
-    timeout             = 5
-    healthy_threshold   = 2
-    unhealthy_threshold = 2
-    matcher             = "200"
-  }
+  health_check {
+  path                = "/admin"     # or try "/"
+  port                = "traffic-port"
+  protocol            = "HTTP"
+  interval            = 30
+  timeout             = 10
+  healthy_threshold   = 2
+  unhealthy_threshold = 5
+  matcher             = "200-399"
+}
+
 }
 
 # Listener
