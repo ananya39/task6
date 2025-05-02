@@ -71,6 +71,15 @@ resource "aws_ecs_task_definition" "strapi_task" {
           protocol      = "tcp"
         }
       ]
+      environment = [
+      { name = "APP_KEYS", value = "toBeModified1,toBeModified2" },
+      { name = "API_TOKEN_SALT", value = "tobemodified" },
+      { name = "ADMIN_JWT_SECRET", value = "tobemodified" },
+      { name = "TRANSFER_TOKEN_SALT", value = "tobemodified" },
+      { name = "JWT_SECRET", value = "tobemodified" },
+      { name = "HOST", value = "0.0.0.0" },
+      { name = "PORT", value = "1337" }
+    ]
     }
   ])
 }
