@@ -1,10 +1,10 @@
 name: Deploy Strapi to ECS with Terraform
 
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Build and Push ECR Image"]
+    types:
+      - completed
 
 jobs:
   deploy-strapi:
